@@ -11,3 +11,7 @@ spring:
 
 server:
   port: 8080
+
+openai:
+  api-key: ${OPENAI_API_KEY:}
+  model: ${OPENAI_MODEL:gpt-4.1-mini}
