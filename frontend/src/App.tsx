@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useState } from 'react';
 
-const api = import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
+const api = import.meta.env.VITE_API_URL || '/api';
 type Release = { id:number; name:string; targetDate:string; status:string };
 type Dashboard = { releaseName:string; decision:'GO'|'NO_GO'; reasons:string[]; requirements:number; requirementsWithTests:number; testCases:number; testRuns:number; passedRuns:number; failedRuns:number; openDefects:number; openBlockers:number; passRate:number };
 export default function App() {
