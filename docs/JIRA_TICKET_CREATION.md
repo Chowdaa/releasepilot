@@ -23,6 +23,17 @@ export JIRA_API_TOKEN
 node scripts/create-jira-tickets.mjs
 ```
 
+## Enrich the created backlog
+
+After the tickets exist, run the following command from the repository root to
+add product-quality descriptions, user stories, acceptance criteria, and QA
+notes to the existing `KAN-1` through `KAN-15` tickets. This command updates
+only those existing tickets and does not create new ones.
+
+```bash
+node scripts/enrich-jira-tickets.mjs
+```
+
 The token is requested without echoing it and is available only in the current terminal session. Close the terminal or run `unset JIRA_API_TOKEN` after the script completes.
 
 ## Expected result
