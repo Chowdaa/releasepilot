@@ -1,0 +1,15 @@
+Summary,Issue Type,Priority,Status,Description
+Create and list releases,Story,High,Done,Users can create and view releases through the API and UI.
+Manage release requirements,Story,High,Done,Users can add requirements to a release.
+Link test cases to requirements,Story,High,Done,Test cases carry a requirement link for coverage measurement.
+Record test-run results,Story,High,Done,Users can record Pass Fail Blocked or Skipped execution evidence.
+Log release defects,Story,High,Done,Users can log open defects linked to a release and optional test run.
+Calculate explainable Go No-Go decision,Story,Critical,Done,The dashboard evaluates blockers coverage test evidence and pass rate.
+Build release dashboard,Story,High,Done,React dashboard displays decision reasons and key metrics.
+Add ShopSphere demo data,Story,Medium,Done,Seeded fictional checkout data makes the demo useful immediately.
+Add GitHub Actions CI,Task,Medium,Done,Backend and frontend builds run on push and pull request.
+Configure GitHub Codespaces,Task,Medium,Done,Repository includes a browser based development environment.
+Import Jira CSV requirements,Story,High,Done,Users can import Jira exported Story and Task rows into a release.
+Add CSV preview and duplicate detection,Story,Medium,To Do,Show proposed imports before saving and prevent duplicate requirements.
+Add Jira Cloud OAuth integration,Story,Medium,To Do,Allow opted in live Jira imports after early validation.
+Add AI assisted test case drafts,Story,Medium,To Do,Draft test cases from a requirement with human approval required.
