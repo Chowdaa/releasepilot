@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: releasepilot-api
+  datasource:
+    url: jdbc:h2:mem:releasepilot;MODE=PostgreSQL;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+server:
+  port: 8080
