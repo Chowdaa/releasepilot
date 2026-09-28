@@ -76,4 +76,10 @@ Open the address Vite prints, usually `http://localhost:5173`.
 
 The dashboard reports **No-Go** when there is an open blocker defect, a requirement without a linked test case, no test-run evidence, or a pass rate below 90%. The reasons are returned in the API response so the recommendation remains explainable.
 
+## Product documentation
+
+- [Product strategy](docs/PRODUCT_STRATEGY.md)
+- [Jira CSV import PRD](docs/PRD.md)
+- [Jira import guide and backlog](docs/JIRA_IMPORT_GUIDE.md)
+
 See [the product brief](docs/PROJECT_BRIEF.md) and [the MVP backlog](docs/MVP_BACKLOG.md).
