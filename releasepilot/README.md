@@ -6,7 +6,7 @@ This portfolio project demonstrates backend engineering, quality automation, and
 
 ## MVP outcome
 
-A QA engineer can create a release, add requirements, link test cases, record test results and defects, then see a clear **Go / No-Go** recommendation. The application seeds a fictional ShopSphere checkout release so the dashboard works immediately.
+A QA engineer can create a release, import Jira requirements, generate reviewable test-case drafts, approve a draft into a real test case, record test results and defects from the UI, then see a clear **Go / No-Go** recommendation. The application seeds a fictional ShopSphere checkout release so the dashboard works immediately.
 
 ## Stack
 
@@ -68,9 +68,23 @@ Open the address Vite prints, usually `http://localhost:5173`.
 | Releases | `GET, POST /api/releases` |
 | Requirements | `GET, POST /api/releases/{releaseId}/requirements` |
 | Test cases | `GET /api/releases/{releaseId}/test-cases`, `POST /api/test-cases` |
-| Test runs | `POST /api/test-runs` |
+| Test runs | `GET /api/releases/{releaseId}/test-runs`, `POST /api/test-runs` |
 | Defects | `GET /api/releases/{releaseId}/defects`, `POST /api/defects` |
+| Test-case drafts | `POST /api/releases/{releaseId}/test-case-drafts` |
 | Dashboard | `GET /api/releases/{releaseId}/dashboard` |
+
+The dashboard includes forms for recording test evidence and defects, plus an AI-assisted draft workflow with mandatory human approval, so the core QA workflow can be demonstrated without an API client.
+
+## Optional AI configuration
+
+The draft workflow works out of the box with a local safety fallback that produces happy-path, validation, and recovery test drafts. To use OpenAI for the draft step, set an API key only in your terminal or deployment environment—never in source control:
+
+```bash
+export OPENAI_API_KEY="your-key"
+export OPENAI_MODEL="your-supported-model"
+```
+
+The UI always requires a human to review and click **Approve & create test case** before anything is stored.
 
 ## Decision rules
 
@@ -83,3 +97,12 @@ The dashboard reports **No-Go** when there is an open blocker defect, a requirem
 - [Jira import guide and backlog](docs/JIRA_IMPORT_GUIDE.md)
 
 See [the product brief](docs/PROJECT_BRIEF.md) and [the MVP backlog](docs/MVP_BACKLOG.md).
+
+## Quality checks
+
+```bash
+cd backend && mvn test
+cd ../frontend && npm run build
+```
+
+The backend workflow tests cover the Go decision, missing test-evidence No-Go, and blocker-defect No-Go rules.
