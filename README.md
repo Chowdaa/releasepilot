@@ -97,3 +97,12 @@ The dashboard reports **No-Go** when there is an open blocker defect, a requirem
 - [Jira import guide and backlog](docs/JIRA_IMPORT_GUIDE.md)
 
 See [the product brief](docs/PROJECT_BRIEF.md) and [the MVP backlog](docs/MVP_BACKLOG.md).
+
+## Quality checks
+
+```bash
+cd backend && mvn test
+cd ../frontend && npm run build
+```
+
+The backend workflow tests cover the Go decision, missing test-evidence No-Go, and blocker-defect No-Go rules.
